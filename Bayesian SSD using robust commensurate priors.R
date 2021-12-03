@@ -40,7 +40,7 @@ cprior = function(p, mk, sk2, wk, dw, br){
 #=====================================================================#
 #     Implementation of the proposed Bayesian sample size formulae    #
 #=====================================================================#
-# R is the allocation ratio to A: n_A/N, 
+# R is the allocation ratio to A: n_A/N, where N = n_A + n_B 
 # where N = n_A + n_B as the new study sample size
 # gm1 = (a01, b01)
 # gm2 = (a02, b02)
