@@ -1,5 +1,6 @@
 # Using proper Bayesian approach with an informative prior
 #------------------------- Known \sigma_0^2 -------------------------#
+## R is the allocation ratio to group A, that is, R = n_A/(n_A + n_B)
 ## ACC/ALC
 pbACCknvar = function(R, sig02, alpha = 0.05, l0 = 0.75, prvar){
   N = sig02/(R*(1-R))*(4*qnorm(1-alpha/2)^2/l0^2 - 1/prvar)
