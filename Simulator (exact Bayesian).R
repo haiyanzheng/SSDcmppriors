@@ -1,5 +1,3 @@
-setwd("~/Dropbox/CRUK_Cam/SSE for studies using historical data/Code/Code_Nov2021")
-
 source("Bayesian SSD using robust commensurate priors.R")
 
 #-----------------------------------------------------------------------------#
