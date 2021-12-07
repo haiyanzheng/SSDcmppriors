@@ -25,10 +25,6 @@ cmspstCP = function(Sc, N = c(10, 10), true.mu, sig02, l0, wk, dw, br, s0 = 0.05
 }
 
 
-# cmspstCP(Sc = MySc1, N = c(40, 40), true.mu = -0.3,
-#          sig02 = 0.35, l0 = 0.65, wk = MyWgt1,
-#          dw = c(2, 2), br = c(18, 3), s0 = 0.05)
-
 #------- to evaluate the average interval length of the posterior HPD -------#
 cmspstIL = function(Sc, N = c(10, 10), true.mu, sig02, alpha0, wk, dw, br, s0 = 0.05){
   
@@ -49,10 +45,6 @@ cmspstIL = function(Sc, N = c(10, 10), true.mu, sig02, alpha0, wk, dw, br, s0 = 
 }
 
 
-# cmspstIL(Sc = MySc1, N = c(40, 40), true.mu = -0.3,
-#          sig02 = 0.35, alpha0 = 0.05, wk = MyWgt1,
-#          dw = c(2, 2), br = c(18, 3), s0 = 0.05)
-
 #----------------- to evaluate the average posterior variance -----------------#
 cmspstEV = function(Sc, N = c(10, 10), true.mu, sig02, epsil0, wk, dw, br, s0 = 0.05){
   
@@ -72,10 +64,6 @@ cmspstEV = function(Sc, N = c(10, 10), true.mu, sig02, epsil0, wk, dw, br, s0 = 
   return(prdMu)
 }
 
-
-# cmspstEV(Sc = MySc1, N = c(40, 40), true.mu = -0.3,
-#          sig02 = 0.35, epsil0 = 0.03, wk = MyWgt1,
-#          dw = c(2, 2), br = c(18, 3), s0 = 0.05)
 
 #------------------------------- toy example --------------------------------#
 MySc1 = cbind(c(-0.26, -0.24, -0.37, -0.34, -0.32), 
@@ -193,10 +181,6 @@ cmspstCP2 = function(Sc, N = c(10, 10), true.mu, true.sig02,
 }
 
 
-# cmspstCP2(Sc = MySc1, N = c(40, 40), true.mu = -0.3,
-#          true.sig02 = 0.35, df = 5, l0 = 0.65, wk = MyWgt1,
-#          dw = c(2, 2), br = c(18, 3), s0 = 0.05)
-
 #------- to evaluate the average interval length of the posterior HPD -------#
 cmspstIL2 = function(Sc, N = c(10, 10), true.mu, true.sig02, 
                      df, alpha0, wk, dw, br, s0 = 0.05){
@@ -226,10 +210,6 @@ cmspstIL2 = function(Sc, N = c(10, 10), true.mu, true.sig02,
 }
 
 
-# cmspstIL2(Sc = MySc1, N = c(40, 40), true.mu = -0.3,
-#          true.sig02 = 0.35, df = 5, alpha0 = 0.05, wk = MyWgt1,
-#          dw = c(2, 2), br = c(18, 3), s0 = 0.05)
-
 #----------------- to evaluate the average posterior variance -----------------#
 cmspstEV2 = function(Sc, N = c(10, 10), true.mu, true.sig02, 
                      df, epsil0, wk, dw, br, s0 = 0.05){
@@ -258,10 +238,6 @@ cmspstEV2 = function(Sc, N = c(10, 10), true.mu, true.sig02,
   return(prdMu)
 }
 
-
-# cmspstEV2(Sc = MySc1, N = c(40, 40), true.mu = -0.3,
-#          true.sig02 = 0.35, df = 5, epsil0 = 0.03, wk = MyWgt1,
-#          dw = c(2, 2), br = c(18, 3), s0 = 0.05)
 
 #----------------------------------------------------------------------------#
 ACCSSI = ACCunknvar(R = 0.5, sk2 = MySc1[,2], wk = MyWgt1, 
