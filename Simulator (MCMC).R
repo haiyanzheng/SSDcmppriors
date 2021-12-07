@@ -71,17 +71,11 @@ tmixpstCP = function(Sc, N = c(10, 10), true.mu, sig02, l0, wk, dw, br, s0 = 0.0
   eta = tMixFit$mean$mu
   sig2eta = tMixFit$sd$mu^2
   
-  # eta = sum(tMixFit$mean$which.ind[,1]*tMixFit$mean$w.tld.theta)
-  # sig2eta = sum(tMixFit$mean$which.ind[,1]^2*tMixFit$sd$w.tld.theta^2)
-  
   cvrInd = eta+l0/2 >= true.mu & eta-l0/2 <= true.mu
   
   return(cvrInd)
 }
 
-# tmixpstCP(Sc = MySc1, N = c(40, 40), true.mu = -0.3,
-#          sig02 = 0.35, l0 = 0.65, wk = MyWgt1,
-#          dw = c(2, 2), br = c(18, 3), s0 = 0.05)
 
 #------- to evaluate the average interval length of the posterior HPD -------#
 tmixpstIL = function(Sc, N = c(10, 10), true.mu, sig02, alpha0, wk, dw, br, s0 = 0.05){
@@ -113,17 +107,10 @@ tmixpstIL = function(Sc, N = c(10, 10), true.mu, sig02, alpha0, wk, dw, br, s0 =
   eta = tMixFit$mean$mu
   sig2eta = tMixFit$sd$mu^2
   
-  # eta = sum(tMixFit$mean$which.ind[,1]*tMixFit$mean$w.tld.theta)
-  # sig2eta = sum(tMixFit$mean$which.ind[,1]^2*tMixFit$sd$w.tld.theta^2)
-  
   IntLen = (qnorm(1-alpha0/2, mean = eta, sd = sqrt(sig2eta)) - true.mu)*2
   
   return(IntLen)
 }
-
-# tmixpstIL(Sc = MySc1, N = c(40, 40), true.mu = -0.3,
-#          sig02 = 0.35, alpha0 = 0.05, wk = MyWgt1,
-#          dw = c(2, 2), br = c(18, 3), s0 = 0.05)
 
 
 #------- to evaluate the average interval length of the posterior HPD -------#
@@ -156,17 +143,10 @@ tmixpstEV = function(Sc, N = c(10, 10), true.mu, sig02, epsil0, wk, dw, br, s0 =
   eta = tMixFit$mean$mu
   sig2eta = tMixFit$sd$mu^2
   
-  # eta = sum(tMixFit$mean$which.ind[,1]*tMixFit$mean$w.tld.theta)
-  # sig2eta = sum(tMixFit$mean$which.ind[,1]^2*tMixFit$sd$w.tld.theta^2)
-  
   prdMu = rnorm(1, mean = true.mu, sd = sqrt(sig2eta))
   
   return(prdMu)
 }
-
-# tmixpstEV(Sc = MySc1, N = c(40, 40), true.mu = -0.3,
-#          sig02 = 0.35, epsil0 = 0.03, wk = MyWgt1,
-#          dw = c(2, 2), br = c(18, 3), s0 = 0.05)
 
 
 #------------------------------- toy example --------------------------------#
