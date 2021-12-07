@@ -1,0 +1,35 @@
+
+model{
+	for(i in 1:Nobs){
+		a[i] ~ dnorm(mu, prec)
+		b[i] ~ dnorm(0, prec)
+	}	
+
+	mu <- w.tld.theta[1] + w.tld.theta[2] + w.tld.theta[3] + w.tld.theta[4] + w.tld.theta[5]
+	gm.par <- w.var[1] + w.var[2] + w.var[3] + w.var[4] + w.var[5]
+
+	par1 <- c/2
+	par2 <- c/2*gm.par
+
+	for(k in 1:5){
+		tld.theta[k] ~ dnorm(theta[k], nu[k])
+		theta[k] <- Prior.lambda[k] + Prior.sk2[k]*lambda01[k]
+		lambda01[k] ~ dnorm(0, 1)
+
+		nu[k] <- mix.gamma[which[k]]
+		which[k] ~ dcat(wMix[k,1:2])
+
+			for(kk in 1:2){
+				which.ind[k, kk] <- equals(which[k], kk)
+			}
+
+		w.tld.theta[k] <- tld.theta[k]*p[k]
+		w.var[k] <- p[k]^2*(Prior.sk2[k] + wMix[k,1]*b01/(a01-1) + wMix[k,2]*b02/(a01-1))
+	}
+
+		mix.gamma[1] ~ dgamma(a01, b01)
+		mix.gamma[2] ~ dgamma(a02, b02)
+
+		prec ~ dgamma(par1, par2)
+}
+
