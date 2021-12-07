@@ -24,7 +24,7 @@ model{
 			}
 
 		w.tld.theta[k] <- tld.theta[k]*p[k]
-		w.var[k] <- p[k]^2*(Prior.sk2[k] + wMix[k,1]*b01/(a01-1) + wMix[k,2]*b02/(a01-1))
+		w.var[k] <- pow(p[k],2)*(Prior.sk2[k] + wMix[k,1]*b01/(a01-1) + wMix[k,2]*b02/(a01-1))
 	}
 
 		mix.gamma[1] ~ dgamma(a01, b01)
