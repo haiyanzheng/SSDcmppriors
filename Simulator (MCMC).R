@@ -244,5 +244,5 @@ for(i in 1:nsim){
                               dw = c(2, 2), br = c(18, 3), s0 = 0.05)
 }
   
-var(tMixPredMuI-SimMuI)
-var(tMixPredMuII-SimMuII)
+var(tMixPredMuI-SimMuIII)
+var(tMixPredMuII-SimMuIV)
