@@ -49,8 +49,11 @@ The simulators, especially the ones using Markov chain Monte Carlo may cost time
 
 * Run R code
 #+BEGIN_SRC R :exports both :results output :session *R* :cache no
+
 source("Bayesian SSD using robust commensurate priors.R")
+
 source("Historical data.R")
+
 #+END_SRC
 
 * R and package versions
