@@ -12,23 +12,39 @@ For any issues or technical questions relating to the implementation, please con
 The file describes the infra structure of the numerical studies for
 the Bayesian sample size determination approaches written in the manuscript. This infrastructure is composed of the following files/folders:
 
--  [[./Bayesian SSD using arbitrary priors.R]], [[./Bayesian SSD using robust commensurate priors.R]] define functions used to compute the Bayesian sample sizes according to the respective criteria (i.e., ACC, ALC and APVC) for cases of known and unknown variances. 
-Specifically, the former incorporates a prior for the mean difference, specified based upon pre-experimental information from a single source; whereas, the latter can accommodate pre-experimental information from multiple sources.
+-  [[./Bayesian SSD using arbitrary priors.R]], [[./Bayesian SSD using robust commensurate priors.R]] define functions used to compute the Bayesian sample sizes 
+according to the respective criteria (i.e., ACC, ALC and APVC) for cases of known and unknown variances. 
+Specifically, the former incorporates a prior for the mean difference, 
+specified based upon pre-experimental information from a single source; 
+whereas, the latter can accommodate pre-experimental information from multiple sources.
 
--  [[./Historical data.R]]: R code to stipulate the four configurations of historical data for sample size determination. The collective priors contained in Table 1 of the manuscript can be reproduced by the functions in this R script.
+-  [[./Historical data.R]]: R code to stipulate the four configurations of historical data for sample size determination. 
+The collective priors contained in Table 1 of the manuscript can be reproduced by the functions in this R script.
 
--  [[./Figures1-4.R]]: R code used to generate figures 1 - 4 of the manuscript. With this, the user will know how to implement the proposed Bayesian approach to sample size determination.
+-  [[./Figures1-4.R]]: R code used to generate figures 1 - 4 of the manuscript. 
+With this, the user will know how to implement the proposed Bayesian approach to sample size determination.
 
--  [[./MyMod.txt]] is the OpenBUGS code to be called in R for fitting the proposed Bayesian model (no Normal approximation involved) using Markov chain Monte Carlo for cases of known variance.  
+-  [[./MyMod.txt]] is the OpenBUGS code to be called in R for fitting the proposed Bayesian model (no Normal approximation involved) 
+using Markov chain Monte Carlo for cases of known variance.  
 
--  [[./MyMod2.txt]] is the OpenBUGS code to be called in R for fitting the proposed Bayesian model (no Normal approximation involved) using Markov chain Monte Carlo for cases of unknown variance.  
+-  [[./MyMod2.txt]] is the OpenBUGS code to be called in R for fitting the proposed Bayesian model (no Normal approximation involved) 
+using Markov chain Monte Carlo for cases of unknown variance.  
 
--  [[./Simulator (exact Bayesian).R]] defines the functions to simulate e.g., 100,000 replicates of new experiments, which are to be analysed to compute the average coverage, length of the highest density function, and expected variance of the posterior distribution. The posterior distribution will be derived based on exact Bayesian inference, so the normal approximation in expression (4) of the manuscript will be used. 
+-  [[./Simulator (exact Bayesian).R]] defines the functions to simulate e.g., 100,000 replicates of new experiments,
+which are to be analysed to compute the average coverage, length of the highest density function,
+and expected variance of the posterior distribution. 
+The posterior distribution will be derived based on exact Bayesian inference, 
+so the normal approximation in expression (4) of the manuscript will be used. 
 
--  [[./Simulator (MCMC).R]] defines the functions to simulate e.g., 100,000 replicates of new experiments, which are to be analysed to compute the average coverage, length of the highest density function, and expected variance of the posterior distribution. The posterior distribution will be derived based on Markov chain Monte Carlo samples, calling the OpenBUGS models, titled 'MyMod.txt' or 'MyMod2.txt'. The normal approximation in expression (4) of the manuscript is not used.
+-  [[./Simulator (MCMC).R]] defines the functions to simulate e.g., 100,000 replicates of new experiments, 
+which are to be analysed to compute the average coverage, length of the highest density function, and expected variance of the posterior distribution. 
+The posterior distribution will be derived based on Markov chain Monte Carlo samples, 
+calling the OpenBUGS models, titled 'MyMod.txt' or 'MyMod2.txt'. 
+The normal approximation in expression (4) of the manuscript is not used.
 
 
-Note: The user would first run [[./Historical data.R]] and [[./Figures1-4.R]] for reproducible figures presented in the manuscript. The simulators, especially the ones using Markov chain Monte Carlo may cost time to simulate and analyse 100,000 replicates of the new experiment.
+Note: The user would first run [[./Historical data.R]] and [[./Figures1-4.R]] for reproducible figures presented in the manuscript. 
+The simulators, especially the ones using Markov chain Monte Carlo may cost time to simulate and analyse 100,000 replicates of the new experiment.
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 * Run R code
