@@ -1,3 +1,9 @@
+Copyright (c) 2022 Haiyan Zheng
+
+This file is part of the IDENT project.
+
+The IDENT project can not be copied and/or distributed without the express permission of Haiyan Zheng <haiyan.zheng@mrc-bsu.cam.ac.uk>.
+
 # SSDcmspriors
 
 This repository contains R functions to implement Bayesian sample size determination for experiments comparing two groups, for which relevant pre-experimental information from multiple sources can be incoporated in a robust prior to support both the design and analysis. Readers of the following paper can use the R functions to reproduce the numerical results and/or figures reported.
