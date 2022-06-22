@@ -15,7 +15,7 @@ For any issues or technical questions relating to the implementation, please con
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 * Content of the folder
-The file describes the infra structure of the numerical studies for
+The file describes the infrastructure of the numerical studies for
 the Bayesian sample size determination approaches written in the manuscript. This infrastructure is composed of the following files/folders:
 
 -  [[./Bayesian SSD using arbitrary priors.R]], [[./Bayesian SSD using robust commensurate priors.R]] define functions used to compute the Bayesian sample sizes 
